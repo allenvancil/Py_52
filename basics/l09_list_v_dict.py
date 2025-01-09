@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     while True:
 
-        find_ip = input("Enter ip addres looking for: \n >> ")
+        find_ip = input("Enter ip address looking for: \n >> ")
         if not find_ip:
             break
 
