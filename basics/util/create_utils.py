@@ -2,6 +2,9 @@ from random import choice
 import string
 from pprint import pprint
 
+from pkg_resources import non_empty_lines
+
+
 def create_devices(num_dev=1, num_subnet=1):
 
     created_devices = list()
@@ -61,3 +64,14 @@ def create_network(num_dev=1, num_subnet=1):
         device["interfaces"] = interfaces
     return network
 pprint(create_network(25,2))
+
+def create_devices_gen(num_dev=1, num_subnets=1):
+
+    if num_dev > 254 or num_subnets >254:
+        print("Error!!! Too many devices/subnets")
+        return None
+    print("\nbeginning device creation...\n")
+    for subnet_index in range(1, num_subnets + 1):
+        for device_index in range(1, num_dev + 1):
+            device = create_devices(device_index, subnet_index)
+            yield device
