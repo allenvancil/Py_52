@@ -4,8 +4,7 @@ from pprint import pprint
 
 from pkg_resources import non_empty_lines
 
-
-def create_devices(num_dev=1, num_subnet=1):
+def create_device(num_dev=1, num_subnet=1):
 
     created_devices = list()
     if num_dev > 254 or num_subnet >254:
@@ -38,10 +37,36 @@ def create_devices(num_dev=1, num_subnet=1):
             device["ip"] = "10.0." + str(subnet_index) + "." + str(device_index)
             created_devices.append(device)
     return created_devices
+# pprint(create_device(5,1))
+
+def create_devices(num_dev=1, num_subnet=1):
+    created_devices = list()
+
+    if num_dev > 254 or num_subnet > 254:
+        print("error: too many subnet or devices")
+        return created_devices
+
+    print("Beginning device creation")
+    for subnet_index in range(1, num_subnet+1):
+
+        for device_index in range(1, num_dev+1):
+
+            device = create_device(device_index, subnet_index)
+            created_devices.append(device)
+
+    print("completed device creation")
+    return created_devices
+# pprint(create_devices(5,1))
+
+def create_devices_tuple(num_dev=1, num_subnet=1):
+
+    return tuple(create_devices(num_dev=num_dev, num_subnet=num_subnet))
+
+pprint(create_devices_tuple(5,1))
 
 def create_network(num_dev=1, num_subnet=1):
 
-    devices = create_devices(num_dev, num_subnet)
+    devices = create_device(num_dev, num_subnet)
     network = dict()
     network["subnets"] = dict()
     for device in devices:
@@ -63,15 +88,6 @@ def create_network(num_dev=1, num_subnet=1):
             interfaces.append(interface)
         device["interfaces"] = interfaces
     return network
-pprint(create_network(25,2))
+#  pprint(create_network(5,2))
 
-def create_devices_gen(num_dev=1, num_subnets=1):
 
-    if num_dev > 254 or num_subnets >254:
-        print("Error!!! Too many devices/subnets")
-        return None
-    print("\nbeginning device creation...\n")
-    for subnet_index in range(1, num_subnets + 1):
-        for device_index in range(1, num_dev + 1):
-            device = create_devices(device_index, subnet_index)
-            yield device
