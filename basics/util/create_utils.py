@@ -25,7 +25,7 @@ def get_rand_ip(subnet_index):
 
         allocated_ip_addresses.add(ip)
     return None
-pprint(get_rand_ip(10))
+# pprint(get_rand_ip(10))
 
 # Function creates a dictionary of a random device
 
@@ -83,16 +83,16 @@ def create_devices(num_dev=1, num_subnet=1, random_ip=False):
             device = create_device(device_index, subnet_index, random_ip)
             created_devices.append(device)
 
+    print("completed device creation")
 
     return created_devices
 # pprint(create_devices(5,1))
-print("completed device creation")
 
 def create_devices_tuple(num_dev=1, num_subnet=1):
 
     return tuple(create_devices(num_dev=num_dev, num_subnet=num_subnet))
 
-pprint(create_devices_tuple(5,1))
+# pprint(create_devices_tuple(5,1))
 
 def create_network(num_dev=1, num_subnet=1):
 
@@ -118,7 +118,7 @@ def create_network(num_dev=1, num_subnet=1):
             interfaces.append(interface)
         device["interfaces"] = interfaces
     return network
-pprint(create_network(5,2))
+# pprint(create_network(5,2))
 
 def create_devices_gen(num_dev=1, num_subnet=1):
     if num_dev > 254 or num_subnet > 254:
