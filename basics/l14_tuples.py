@@ -50,7 +50,7 @@ if __name__ == "__main__":
     for device in devices:
         Device = namedtuple("Device", device.keys())
         devices_as_namedtuples.append(Device(**device))
-    pprint(devices_as_namedtuples)
+    pprint(tuple(devices_as_namedtuples))
 
     print("\n---------------pprint devices named as tuples--------------\n")
     pprint(devices_as_namedtuples)
