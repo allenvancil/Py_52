@@ -42,6 +42,15 @@ if __name__ == "__main__":
     for device in devices:
         Device = namedtuple("Device", ["name", "vendor", "os", "version", "ip"])
         devices_as_namedtuples.append(Device(**device))
+    pprint(devices_as_namedtuples)
+
+    print("\n---------------convert devices into tuples previously defined--------------\n")
+    devices = create_devices(10,2, True)
+    devices_as_namedtuples = list()
+    for device in devices:
+        Device = namedtuple("Device", device.keys())
+        devices_as_namedtuples.append(Device(**device))
+    pprint(devices_as_namedtuples)
 
     print("\n---------------pprint devices named as tuples--------------\n")
     pprint(devices_as_namedtuples)
