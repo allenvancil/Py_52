@@ -53,16 +53,40 @@ for device_type in [IOSXR]:
 
     connection.disconnect()
 
-    print("\n\n---------Begin cycling through show commands---------")
-    xr_connection = netmiko_connection(IOSXR)
+print("\n\n---------Begin cycling through show commands---------")
+xr_connection = netmiko_connection(IOSXR)
 
-    if xr_connection:
-        print("---------connection successful------")
+if xr_connection:
+    print("---------connection successful------")
+else:
+    exit()
+
+nxos_version_raw = None
+csr_version_raw = None
+xr_version_raw = None
+
+for commannd_type, command in commands.items():
+    print(f"\n-----------command: {commannd_type}-------------")
+
+    print(f"\n\n----------- ... for IOSXR: {command[IOSXR]}------------")
+    xr_output = xr_connection.send_command(command[IOSXR])
+    print("\nthis is xr_output = \n",xr_output)
+
+    if commannd_type == SHOW_VERSION:
+        xr_version_raw = xr_output
+    print("\nxr_version_raw = \n", xr_version_raw)
+    
+xr_connection.disconnect()
+
+if xr_version_raw:
+    re_xr_version_pattern = r"Ciso IOS XR Software, Version (.*)"
+
+    xr_version_match = re.search(re_xr_version_pattern, xr_version_raw)
+
+    if xr_version_match:
+        print(f"-----> IOSXR version parsed from output: {xr_version_match.group(1)}")
     else:
-        exit()
-
-
-
+        print(f"!!!!error, no version data to parse")
 
 
 
