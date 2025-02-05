@@ -1,22 +1,22 @@
 from netmiko import Netmiko
 
 cisco_sandbox_devices = {
-    # "ios": {
-    #     "hostname": "sandbox-iosxe-recomm-1.cisco.com",
-    #     "port": 22,
-    #     "username": "developer",
-    #     "password": "C1sco12345",
-    #     "device_type": "cisco_ios",
-    # },
-    # "iosxr": {
-    #     "hostname": "sandbox-iosxr-1.cisco.com",
-    #     "port": 22,
-    #     "username": "admin",
-    #     "password": "C1sco12345",
-    #     "device_type": "cisco_ios",
-    # },
+    "ios": {
+        "hostname": "sandbox-iosxe-recomm-1.cisco.com",
+        "port": 22,
+        "username": "developer",
+        "password": "C1sco12345",
+        "device_type": "cisco_ios",
+    },
+    "iosxr": {
+        "hostname": "sandbox-iosxr-1.cisco.com",
+        "port": 22,
+        "username": "admin",
+        "password": "C1sco12345",
+        "device_type": "cisco_ios",
+    },
     "nxos": {
-        "hostname": "sandbox-nxos-1.cisco.com",
+"hostname": "sandbox-nxos-1.cisco.com",
         "port": 22,
         "username": "admin",
         "password": "Admin_1234!",
@@ -24,13 +24,11 @@ cisco_sandbox_devices = {
     },
 }
 
-
-def netmiko_connect(device_type):
-
+def netmiko_connection(device_type):
     print(
         f"\n\nConnecting to {cisco_sandbox_devices[device_type]['hostname']}:{cisco_sandbox_devices[device_type]['port']}"
     )
-    print("... this may take a little while.")
+    print("....this may take a little while.")
 
     connection = Netmiko(
         cisco_sandbox_devices[device_type]["hostname"],
@@ -42,6 +40,5 @@ def netmiko_connect(device_type):
 
     return connection
 
-
-def disconnect(connection):
+def disconnct(connection):
     connection.disconnect()
