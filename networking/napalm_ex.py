@@ -25,5 +25,42 @@ for device_type, device in devices.items():
 
 else:
     napalm_device = driver(
-        hostname=device[""]
+        hostname=device["hostname"],
+        username=device["username"],
+        password=device["password"],
+        optional_args=device{"port": device["port"]},
+    
     )
+
+    napalm_device.open()
+    print("\n------ facts -------")
+    print(json.dumps(napalm_device.get_facts(), sort_keys=True, indent=4))
+
+    print("\n------interfaces---------")
+    print(json.dumps(napalm_device.get_interfaces(), sort_keys=True, indent=4))
+
+    print("\n--------- vlans ---------")
+    try:
+        print(json.dumps(napalm_device.get_vlans(), sort_keys=True, indent=4))
+    except NotImplementedError as e:
+        print(f"This is implemented for {device["hostname"]}, error: {e}")
+
+    print("\n---------- snmp ---------")
+    print(json.dumps(napalm_device.get_snmp_information(), sort_keys=True, indent=4))
+
+    print("\n------- interface counter -----------")
+    try:
+        print(json.dumps(napalm_device.get_interfaces_counters(), sort_keys=True, indent=4))
+    except NotImplementedError as e:
+        print(f"this isnt implemented for {device["hostname"]}, error: {e}")
+
+    print("\n--------- environment -----------")
+    try:
+        print(json.dumps(napalm_device.get_environment(), sort_keys=True, indent=4))
+    except (KeyError, IOError, napalm.pyIOSXR.exceptions.XMLCLIError) as e:
+        print(f"there is a Napalm exception for {device["hostname"]}, error : {e}")
+
+    napalm_device.close()
+        
+
+
