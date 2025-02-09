@@ -1,5 +1,4 @@
 import napalm
-import json
 import copy
 from connect_orgin import cisco_sandbox_devices
 import urllib3
@@ -23,14 +22,14 @@ for device_type, device in devices.items():
             username=device["username"],
             password=device["password"],
         )
+        continue
+    else:
+        napalm_device = driver(
+            hostname=device["hostname"],
+            username=device["username"],
+            password=device["password"],
+            optional_args={"port": device["port"]},
 
-else:
-    napalm_device = driver(
-        hostname=device["hostname"],
-        username=device["username"],
-        password=device["password"],
-        optional_args={"port": device["port"]},
-    
     )
 
     napalm_device.open()
