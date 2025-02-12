@@ -1,4 +1,4 @@
-from connect import netmiko_connection
+from connect_orgin import netmiko_connection
 import re
 
 SHOW_IP_ROUTE = "ip route"
