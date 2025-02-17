@@ -1,0 +1,815 @@
+
+----- Packet summaries --------------------
+0000 Ether / IP / UDP / DNS Qry "b'_spotify-connect._tcp.local.'" 
+0001 Ether / IPv6 / UDP / DNS Qry "b'_spotify-connect._tcp.local.'" 
+0002 Ether / IP / UDP 192.168.10.1:57128 > 239.255.255.250:1900 / Raw
+0003 Ether / IP / UDP 192.168.10.1:57621 > 192.168.10.255:57621 / Raw
+0004 Ether / IP / UDP 192.168.10.1:57621 > 192.168.10.255:57621 / Raw
+0005 Ether / IP / UDP 192.168.10.1:63178 > 239.255.255.250:1900 / Raw
+0006 Ether / IP / UDP 192.168.10.1:63178 > 239.255.255.250:1900 / Raw
+0007 Ether / IP / UDP 192.168.10.1:63178 > 239.255.255.250:1900 / Raw
+0008 Ether / IP / UDP 192.168.10.1:63178 > 239.255.255.250:1900 / Raw
+0009 Ether / fe80::39e5:a827:40e1:cbcd > ff02::16 (0) / IPv6ExtHdrHopByHop / ICMPv6MLReport2
+None
+
+----- DNS packet summaries (collect 10 DNS packets) --------------------
+0000 Ether / IP / UDP / DNS Qry "b'connectivity-check.ubuntu.com.'" 
+0001 Ether / IP / UDP / DNS Ans "2620:2d:4000:1::97" 
+0002 Ether / IP / UDP / DNS Qry "b'resources.jetbrains.com.'" 
+0003 Ether / IP / UDP / DNS Qry "b'resources.jetbrains.com.'" 
+0004 Ether / IP / UDP / DNS Ans "18.238.217.39" 
+0005 Ether / IP / UDP / DNS Ans "2600:9000:2781:b600:16:5107:2340:93a1" 
+0006 Ether / IP / UDP / DNS Qry "b'connectivity-check.ubuntu.com.'" 
+0007 Ether / IP / UDP / DNS Ans "91.189.91.97" 
+0008 Ether / IP / UDP / DNS Qry "b'www.jetbrains.com.'" 
+0009 Ether / IP / UDP / DNS Qry "b'www.jetbrains.com.'" 
+None
+
+
+----- DNS packets, complete (collect 10 DNS packets) ---------------------
+###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 147
+     id        = 22512
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4c97
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 56254
+        len       = 127
+        chksum    = 0xa41d
+###[ DNS ]### 
+           id        = 30020
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 0
+           nscount   = 1
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'www.jetbrains.com.'
+            |  qtype     = AAAA
+            |  qclass    = IN
+           an        = None
+           \ns        \
+            |###[ DNS SOA Resource Record ]### 
+            |  rrname    = 'jetbrains.com.'
+            |  type      = SOA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  mname     = 'ns-1701.awsdns-20.co.uk.'
+            |  rname     = 'awsdns-hostmaster.amazon.com.'
+            |  serial    = 2019122401
+            |  refresh   = 7200
+            |  retry     = 900
+            |  expire    = 1209600
+            |  minimum   = 86400
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 127
+     id        = 22513
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4caa
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 58314
+        len       = 107
+        chksum    = 0xe662
+###[ DNS ]### 
+           id        = 53708
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 4
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'www.jetbrains.com.'
+            |  qtype     = A
+            |  qclass    = IN
+           \an        \
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'www.jetbrains.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 3.163.165.92
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'www.jetbrains.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 3.163.165.51
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'www.jetbrains.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 3.163.165.3
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'www.jetbrains.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 3.163.165.59
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:50:56:f4:ba:c3
+  src       = 00:0c:29:3c:bc:e5
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 75
+     id        = 4318
+     flags     = 
+     frag      = 0
+     ttl       = 64
+     proto     = udp
+     chksum    = 0xd3f1
+     src       = 192.168.10.128
+     dst       = 192.168.10.2
+     \options   \
+###[ UDP ]### 
+        sport     = 51420
+        dport     = domain
+        len       = 55
+        chksum    = 0x961b
+###[ DNS ]### 
+           id        = 58444
+           qr        = 0
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 0
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 0
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'connectivity-check.ubuntu.com.'
+            |  qtype     = AAAA
+            |  qclass    = IN
+           an        = None
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 411
+     id        = 22525
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4b82
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 51420
+        len       = 391
+        chksum    = 0x44f3
+###[ DNS ]### 
+           id        = 58444
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 12
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'connectivity-check.ubuntu.com.'
+            |  qtype     = AAAA
+            |  qclass    = IN
+           \an        \
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2001:67c:1562::23
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::96
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4002:1::196
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4002:1::198
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::98
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::22
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::2a
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::23
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::2b
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2001:67c:1562::24
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4000:1::97
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2620:2d:4002:1::197
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:50:56:f4:ba:c3
+  src       = 00:0c:29:3c:bc:e5
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 75
+     id        = 59616
+     flags     = 
+     frag      = 0
+     ttl       = 64
+     proto     = udp
+     chksum    = 0xfbee
+     src       = 192.168.10.128
+     dst       = 192.168.10.2
+     \options   \
+###[ UDP ]### 
+        sport     = 34168
+        dport     = domain
+        len       = 55
+        chksum    = 0x961b
+###[ DNS ]### 
+           id        = 43385
+           qr        = 0
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 0
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 0
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'connectivity-check.ubuntu.com.'
+            |  qtype     = A
+            |  qclass    = IN
+           an        = None
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 267
+     id        = 22527
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4c10
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 34168
+        len       = 247
+        chksum    = 0x9df1
+###[ DNS ]### 
+           id        = 43385
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 12
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'connectivity-check.ubuntu.com.'
+            |  qtype     = A
+            |  qclass    = IN
+           \an        \
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.96
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.18
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 91.189.91.97
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.49
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 91.189.91.49
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 91.189.91.48
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.17
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.98
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 91.189.91.98
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.97
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 91.189.91.96
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'connectivity-check.ubuntu.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 185.125.190.48
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:50:56:f4:ba:c3
+  src       = 00:0c:29:3c:bc:e5
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 73
+     id        = 43789
+     flags     = 
+     frag      = 0
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x39c4
+     src       = 192.168.10.128
+     dst       = 192.168.10.2
+     \options   \
+###[ UDP ]### 
+        sport     = 57374
+        dport     = domain
+        len       = 53
+        chksum    = 0x9619
+###[ DNS ]### 
+           id        = 14038
+           qr        = 0
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 0
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 0
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'safebrowsing.googleapis.com.'
+            |  qtype     = A
+            |  qclass    = IN
+           an        = None
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:50:56:f4:ba:c3
+  src       = 00:0c:29:3c:bc:e5
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 73
+     id        = 48638
+     flags     = 
+     frag      = 0
+     ttl       = 64
+     proto     = udp
+     chksum    = 0x26d3
+     src       = 192.168.10.128
+     dst       = 192.168.10.2
+     \options   \
+###[ UDP ]### 
+        sport     = 37850
+        dport     = domain
+        len       = 53
+        chksum    = 0x9619
+###[ DNS ]### 
+           id        = 57942
+           qr        = 0
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 0
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 0
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'safebrowsing.googleapis.com.'
+            |  qtype     = AAAA
+            |  qclass    = IN
+           an        = None
+           ns        = None
+           ar        = None
+
+None
+***............................###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 101
+     id        = 22532
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4cb1
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 37850
+        len       = 81
+        chksum    = 0x34c1
+###[ DNS ]### 
+           id        = 57942
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 1
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'safebrowsing.googleapis.com.'
+            |  qtype     = AAAA
+            |  qclass    = IN
+           \an        \
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'safebrowsing.googleapis.com.'
+            |  type      = AAAA
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 2607:f8b0:400a:806::200a
+           ns        = None
+           ar        = None
+
+None
+###[ Ethernet ]### 
+  dst       = 00:0c:29:3c:bc:e5
+  src       = 00:50:56:f4:ba:c3
+  type      = IPv4
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 89
+     id        = 22533
+     flags     = 
+     frag      = 0
+     ttl       = 128
+     proto     = udp
+     chksum    = 0x4cbc
+     src       = 192.168.10.2
+     dst       = 192.168.10.128
+     \options   \
+###[ UDP ]### 
+        sport     = domain
+        dport     = 57374
+        len       = 69
+        chksum    = 0x62ec
+###[ DNS ]### 
+           id        = 14038
+           qr        = 1
+           opcode    = QUERY
+           aa        = 0
+           tc        = 0
+           rd        = 1
+           ra        = 1
+           z         = 0
+           ad        = 0
+           cd        = 0
+           rcode     = ok
+           qdcount   = 1
+           ancount   = 1
+           nscount   = 0
+           arcount   = 0
+           \qd        \
+            |###[ DNS Question Record ]### 
+            |  qname     = 'safebrowsing.googleapis.com.'
+            |  qtype     = A
+            |  qclass    = IN
+           \an        \
+            |###[ DNS Resource Record ]### 
+            |  rrname    = 'safebrowsing.googleapis.com.'
+            |  type      = A
+            |  rclass    = IN
+            |  ttl       = 5
+            |  rdlen     = None
+            |  rdata     = 142.251.33.74
+           ns        = None
+           ar        = None
+
+None
+
+
+----- Capture and print packets as sniffed ---------------------
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 SA / Padding
+     Ether / IP / TCP 192.168.10.128:37622 > 142.251.33.74:https A
+     Ether / IP / TCP 192.168.10.128:37622 > 142.251.33.74:https PA / Raw
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 A / Padding
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 A / Padding
+     Ether / IP / TCP 192.168.10.128:37622 > 142.251.33.74:https PA / Raw
+     Ether / IP / TCP 192.168.10.128:37622 > 142.251.33.74:https PA / Raw
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 A / Padding
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 A / Padding
+     Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 PA / Raw
+
+
+----- Capture and print packets as sniffed (using lambda) ---------------------
+lambda    Ether / IP / TCP 142.251.33.74:https > 192.168.10.128:37622 FPA / Padding
+lambda    Ether / IP / TCP 192.168.10.128:37622 > 142.251.33.74:https A
+lambda    Ether / IP / TCP 192.168.10.128:34706 > 34.107.243.93:https PA / Raw
+lambda    Ether / IP / TCP 34.107.243.93:https > 192.168.10.128:34706 A / Padding
+lambda    Ether / IP / TCP 34.107.243.93:https > 192.168.10.128:34706 RA / Padding
+lambda    Ether / IP / TCP 192.168.10.128:51736 > 34.107.243.93:https S
+lambda    Ether / IP / TCP 34.107.243.93:https > 192.168.10.128:51736 SA / Padding
+lambda    Ether / IP / TCP 192.168.10.128:51736 > 34.107.243.93:https A
+lambda    Ether / IP / TCP 192.168.10.128:51736 > 34.107.243.93:https PA / Raw
+lambda    Ether / IP / TCP 34.107.243.93:https > 192.168.10.128:51736 A / Padding
+
+
+----- Discovery hosts on network using manual ARP ping ---------------------
+Begin emission:
+Finished sending 256 packets.
+
+Received 31 packets, got 3 answers, remaining 253 packets
+Ether / ARP who has 192.168.10.2 says 192.168.10.128 ==> Ether / ARP is at 00:50:56:f4:ba:c3 says 192.168.10.2 / Padding
+Ether / ARP who has 192.168.10.1 says 192.168.10.128 ==> Ether / ARP is at 00:50:56:c0:00:08 says 192.168.10.1 / Padding
+Ether / ARP who has 192.168.10.254 says 192.168.10.128 ==> Ether / ARP is at 00:50:56:f5:be:24 says 192.168.10.254 / Padding
+
+
+----- Discovery hosts on network using arping() function ---------------------
+Begin emission:
+Finished sending 256 packets.
+
+Received 0 packets, got 0 answers, remaining 256 packets
+
+
+----- See what ports are open on a device --------------------
+IP address on which to scan ports: .Begin emission:
+Finished sending 1024 packets.
+
+Received 1 packets, got 0 answers, remaining 1024 packets
+
+
+----- Open/Closed port totals --------------------
+	Open ports: 0
+	Closed ports: 1024
+IP address on which to scan ports: ...........Begin emission:
+
+Received 11 packets, got 0 answers, remaining 1024 packets
+
+
+----- Open/Closed port totals --------------------
+	Open ports: 0
+	Closed ports: 0
+IP address on which to scan ports: .......................................................................................................................................................................Begin emission:
+Finished sending 1024 packets.
+
+Received 167 packets, got 0 answers, remaining 1024 packets
+
+
+----- Open/Closed port totals --------------------
+	Open ports: 0
+	Closed ports: 1024
+IP address on which to scan ports: 
