@@ -17,3 +17,15 @@ def get_version_from_show(show_version_output):
         for lin in uptime_lines:
             if "System uptime: " in line:
                 uptime_parts = line.split()
+                days = int(uptime_parts[2])
+                hours = int(uptime_parts[4])
+                minutes = int(uptime_parts[6])
+                seconds = int(uptime_parts[8])
+                return days*86400 + hours*3600 + minutes*60 + seconds
+            
+    def get_facts_netmiko(connection):
+
+        show_hostname_output = connection.send_command("show hostname")
+        show_version_output = connection.send_command("show version")
+        show_serial_output = connection.send_command("show license host-id")
+        show_uptime_output = connection.send_command("show system uptime")
