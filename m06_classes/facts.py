@@ -29,3 +29,29 @@ def get_version_from_show(show_version_output):
         show_version_output = connection.send_command("show version")
         show_serial_output = connection.send_command("show license host-id")
         show_uptime_output = connection.send_command("show system uptime")
+
+        facts = dict()
+        facts["os_version"] = get_version_from_show(show_version_output)
+        facts["hostname"] = show_hostname_output.strip()
+        facts["serial_number"] = show_serial_output.strip()[20:]
+        facts["uptime"] = get_uptime_from_show(show_uptime_output)
+
+        return facts
+    
+    def get_facts_napalm(connection):
+
+        return connection.get_facts()
+    
+    def get_facts_ncclient(connection):
+
+        facts = dict()
+
+        serail_number_xml_nxos = '<System xmlns="http://cisco.com/ns/yang/cisco-nx-os-device"><serial/></System>'
+        rsp = connection.get(("subtree", serial_number_xml_nxos))
+        serail_xml = xmltodict.parse(rsp.data_xml, dict_constructor=dict)
+
+        facts["serial_number"] = serial_xml["data"]["System"]["serial"]
+
+        return facts
+    
+    
