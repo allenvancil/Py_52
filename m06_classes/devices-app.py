@@ -33,15 +33,15 @@ def created_devices():
 
     return created_devices
 
-devices = created_devices()
-for _, device in devices.items():
-
-    if not device.connect():
-        print(f"----------- Connection Fail : {device.name}")
-        continue
-
-    facts = device.get_facts()
-    print(f"----------- Facts: {device.name}")
-    pprint(facts)
-
-    device.disconnect()
+# devices = created_devices()
+# for _, device in devices.items():
+#
+#     if not device.connect():
+#         print(f"----------- Connection Fail : {device.name}")
+#         continue
+#
+#     facts = device.get_facts()
+#     print(f"----------- Facts: {device.name}")
+#     pprint(facts)
+#
+#     device.disconnect()
